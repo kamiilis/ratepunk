@@ -1,0 +1,105 @@
+@use '../../../app/base.scss';
+
+.step{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: 48px;
+
+    @include base.mediaQuery(tablet){
+        column-gap: 32px;
+    }
+
+    &--right{
+        grid-template-columns: 1fr max-content; 
+    }
+
+    @include base.mediaQuery(mobile){
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, min-content);
+    }
+
+    &__imageContainer{
+        grid-column: 1/2;
+
+        &--right{
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+
+        @include base.mediaQuery(mobile){
+            grid-column: 1/2;
+            grid-row: 1/2;
+            justify-self: center;
+        }
+
+        & img{
+            @include base.mediaQuery(tablet){
+                width: 100px;
+                height: 100px;
+            }
+
+            @include base.mediaQuery(mobile){
+                width: unset;
+                height: unset;
+            }
+        }
+    }
+
+    &__content{
+        grid-column: 2/3;
+        display: grid;
+        grid-template-rows: repeat(3, min-content);
+        row-gap: 16px;
+
+        &--right{
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+
+        @include base.mediaQuery(mobile){
+            grid-column: 1/2;
+            grid-row: 2/3;
+            margin-top: 32px;
+            justify-items: center;
+        }
+    }
+
+    &__stepNumber{
+        grid-row: 1/2;
+        grid-column: 2/3;
+
+        @include base.mediaQuery(mobile){
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+    }
+
+    &__heading{
+        grid-row: 2/3;
+        grid-column: 2/3;
+
+        @include base.mediaQuery(mobile){
+            grid-row: 2/3;
+            grid-column: 1/2;
+        }
+    }
+    
+    &__description{
+        @include base.fontAll(20px,32px,normal,'Noto Sans');
+        color: #1F343E;
+        grid-row: 3/4;
+        grid-column: 2/3;
+
+        @include base.mediaQuery(tablet){
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        @include base.mediaQuery(mobile){
+            text-align: center;
+            grid-row: 3/4;
+            grid-column: 1/2;
+        }
+    }
+}

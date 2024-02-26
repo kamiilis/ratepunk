@@ -1,0 +1,188 @@
+@use '../../app/base.scss'; 
+
+.footer{
+    margin-top: auto;   
+    background-color: #F8F4F9;
+
+    &__innerWrapper{
+        max-width: 1152px;
+        padding: 0 16px;
+        margin: 64px auto 58px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(250px, 1fr) 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 48px;
+
+        @include base.mediaQuery(mobile){
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, min-content);
+            padding: 0 32px;
+            margin: 48px auto;
+        }
+    }
+
+    &__logoBlock{
+        grid-column: 1/2;
+        justify-self: flex-start;
+        max-width: 544px;
+
+        @include base.mediaQuery(mobile){
+            max-width: unset;
+        }
+
+        &  img{
+            margin-bottom: 32px;
+        }
+    }
+
+    &__logoBlockText{
+        @include base.fontAll(16px,24px,normal,'Noto Sans');
+        color: #1F343E;
+        margin-bottom: 46px;
+
+        @include base.mediaQuery(mobile){
+            margin-bottom: 48px;
+        }
+    }
+
+    &__logoBlockYearDesktop{
+        @include base.fontAll(16px,24px,normal,'Noto Sans');
+        color: #6D7A80;
+
+        @include base.mediaQuery(mobile){
+            display: none;
+        }
+    }
+
+    &__logoBlockYearMobile{
+        display: none;
+        @include base.fontAll(16px,24px,normal,'Noto Sans');
+        color: #6D7A80;
+
+        @include base.mediaQuery(mobile){
+            display: inline-block;
+            margin-top: 48px;
+            text-align: center;
+        }
+    }
+
+    &__linkBlock{
+        display: grid;
+        grid-template-columns: max-content minmax(48px, 100px) min-content;
+        justify-self: flex-end;
+
+        @include base.mediaQuery(mobile){
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, min-content);
+            row-gap: 32px;
+            justify-self: flex-start;
+        }
+    }
+
+    &__quickLinks,&__contact,&__social{
+        & h3{
+            @include base.fontAll(20px,24px,bold,'Noto Sans');
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: #1F343E;
+            margin-bottom: 24px;
+
+            @include base.mediaQuery(mobile){
+                margin-bottom: 23px;
+            }
+        }
+    }
+    
+    &__quickLinks{
+        grid-column: 1/2;
+        grid-row: 1/2;
+
+        @include base.mediaQuery(mobile){
+            grid-column: unset;
+            grid-row: unset;
+        }
+
+        & ul{
+            display: grid;
+            grid-auto-rows: min-content;
+            row-gap: 16px;
+            list-style: none;
+
+            @include base.mediaQuery(mobile){
+                row-gap: 15px;
+            }
+        }
+
+        & a{ 
+            text-transform: capitalize;
+            @include base.fontAll(16px,24px,normal,'Noto Sans');
+            color: #1F343E;
+            text-decoration: none;
+        }
+    }
+
+    &__contact {
+        grid-column: 3/4;
+        grid-row: 1/2;
+
+        @include base.mediaQuery(mobile){
+            grid-column: unset;
+            grid-row: unset;
+        }
+
+        & div{
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            align-items: center;
+            column-gap: 16px;
+        }
+
+        & a{
+            @include base.fontAll(16px,24px,normal,'Noto Sans');
+            color: #1F343E;
+            text-decoration: none;
+        }
+    }
+
+    &__social{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        align-self: flex-end;
+
+        @include base.mediaQuery(mobile){
+            grid-column: unset;
+            grid-row: unset;
+        }
+
+        @include base.mediaQuery(mobile){
+
+        }
+
+        & ul{
+            display: grid;
+            grid-template-columns: repeat(5,max-content);
+            column-gap: 8px;
+            list-style: none;
+        }
+   
+        & a{
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            padding: 8px;
+            background-color: #4EB3E3;
+            border: 1px solid #1F343E;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        & img{
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);      
+        }
+
+    }
+}

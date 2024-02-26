@@ -1,0 +1,21 @@
+@mixin mediaQuery($breakpoint){
+    @if $breakpoint == mobile {
+      @media screen and (max-width: 47.9375em) {@content};
+    }
+    @if $breakpoint == tablet {
+      @media screen and (max-width: 64em) {@content};
+    }
+  }
+  
+  @mixin fontAll($fontSize, $lineHeight, $fontWeight, $fontFamily){
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: $fontWeight;
+    font-family: $fontFamily;
+  }
+  
+  @mixin fontSizeHeight($fontSize, $lineHeight){
+    font-size: $fontSize;
+    line-height: $lineHeight;
+  }
+  

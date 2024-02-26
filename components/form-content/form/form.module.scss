@@ -1,0 +1,181 @@
+@use '../../../app/base.scss';
+
+.form{
+ 
+    &__emailBox{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,min-content);
+        margin: 40px 0 0; 
+
+        @include base.mediaQuery(mobile){
+            margin-top: 0;
+            margin: 0px 0 0;
+        }
+    }
+
+    &__emailError{
+        @include base.fontAll(12px,24px,normal,'Noto Sans');
+        color: #ED6F82;
+        height: 24px;
+    }
+
+    &__emailInputBox{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+    }
+
+    &__emailInputBox img{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        position: relative;
+        z-index: 20;
+        align-self: center;
+        margin-left: 20px;
+    }
+
+    &__emailInput{
+        overflow: hidden;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        padding-left: 60px;
+        border: 1px solid #1F343E;
+        border-radius: 8px;
+        z-index: 10;
+        height: 64px;
+        text-overflow:ellipsis;
+        @include base.fontAll(20px,20px,normal,'Noto Sans');
+        color: #1F343E;
+
+        &:focus{
+            outline: none;
+        }
+
+        &::placeholder{
+            @include base.fontAll(20px,20px,normal,'Noto Sans');
+            color: #6D7A80;
+
+        }
+    }
+
+    &__submitBtn{
+        margin: 16px 0 185px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: #4EB3E3;
+        @include base.fontAll(20px,32px,bold,'Noto Sans');
+        text-align: center;
+        border: 1px solid #1F343E;
+        color: #fff;
+        padding: 20px 20px 17px;
+        cursor: pointer;
+
+        @include base.mediaQuery(mobile){
+            margin: 16px 0 71px;
+        }
+    }
+
+    &__successBox{
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        row-gap: 16px;
+        margin: 64px 0 185px;
+        position: relative;
+
+        @include base.mediaQuery(mobile){
+            margin: 24px 0 72px;
+            grid-template-rows: repeat(3, min-content);
+        }
+    }
+
+    &__successMessage{
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+        column-gap: 16px;
+        height: 32px;   
+
+        & img{
+            width: 32px;
+            height: 32px;
+        }
+
+        & span{
+            @include base.fontAll(16px,24px,bold,'Noto Sans');
+            color: #1F343E;
+        }
+
+    }
+
+    &__referralBox{
+        border: 1px solid #1F343E;
+        border-radius: 8px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1/2;
+        grid-template-rows: 1/2;
+
+        @include base.mediaQuery(mobile){
+            grid-template-rows: repeat(2, min-content);
+            grid-template-rows: 2/3;
+        }
+
+    }
+    
+    &__referralInput{
+        @include base.fontAll(20px,20px,normal,'Noto Sans');
+        color: #6D7A80;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        border: transparent;
+        padding-left: 20px;
+
+        @include base.mediaQuery(mobile){
+           height: 56px;
+        }
+    }
+
+    &__copyBtn{
+        @include base.fontAll(20px,24px,bold,'Noto Sans');
+        border: transparent;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        justify-self: flex-end;
+        padding: 19px 24px;
+        color: #fff;
+        background-color: #4EB3E3;
+
+        @include base.mediaQuery(mobile){
+            display: none;
+        }
+
+        &--alt{
+            display: none;
+          
+            @include base.mediaQuery(mobile){
+                display: inline-block;
+                grid-row: 3/4;
+                grid-column: 1/2;
+                width: 100%;
+                border: 1px solid #1F343E;
+                border-radius: 8px;
+            }
+        }   
+    }
+
+    &__popup{
+        @include base.fontAll(20px,24px,bold,'Noto Sans');
+        color: white;
+        position: absolute;
+        background-color: #8cd943;
+        padding: 8px;
+        top: 0;
+        right: 0;
+        border-radius: 8px;
+        z-index: 20;
+        transition: opacity .1s;
+    }
+
+
+}

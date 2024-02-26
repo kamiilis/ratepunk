@@ -1,0 +1,23 @@
+@use './base.scss';
+
+.content{
+    max-width: 1152px;
+    padding: 0 16px;
+    margin: 64px auto;
+
+    @include base.mediaQuery(mobile){
+      margin: 32px 0 48px;
+    }
+
+    &__innerWrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include base.mediaQuery(mobile){
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+  
