@@ -28,7 +28,7 @@ const Form = () => {
     };
 
     const handleCopyStateValue = () => {
-        navigator.clipboard.writeText(email);
+        navigator.clipboard.writeText('https://ratepunk.com/referral');
     };
 
     const handlePopup = () => {
@@ -63,7 +63,7 @@ const Form = () => {
                         <button className={styles.form__copyBtn} type='button' onClick={() => {handleCopyStateValue(); handlePopup();}}>Copy</button>
                     </div>
                     <button className={`${styles.form__copyBtn} ${styles['form__copyBtn--alt']}`}
-                    onClick={() => {handleCopyStateValue()}} type='button'>Copy URL</button>
+                    onClick={() => {handleCopyStateValue(); handlePopup();}} type='button'>Copy URL</button>
                 </div>
             }
             {!showReferral && <button type="submit" className={styles.form__submitBtn}>Get referral Link</button>}
